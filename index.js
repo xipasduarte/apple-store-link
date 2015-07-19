@@ -12,7 +12,7 @@ module.exports = function (id, lang, developer) {
 		throw new TypeError('The application id mustn\'t be empty.');
 	} else {
 		// Remove leading/trailing white space.
-		id = trim(id);
+		id = '/id' + trim(id);
 	}
 
 	// Check if lang is string and not empty.
@@ -23,11 +23,19 @@ module.exports = function (id, lang, developer) {
 		lang = '/' + trim(lang);
 	}
 
-	// Apple iTunes Store link parts.
-	var linkBits = {
-		'pre-locale': 'https://itunes.apple.com',
-		'pre-id': '/app/id'
+	// Check if developer is string and not empty.
+	if (typeof developer !== 'string') {
+		developer = '';
+	}
+	if ( ! empty(developer) ) {
+		developer = '/' + trim(developer);
 	}
 
-	return linkBits['pre-locale'] + lang + linkBits['pre-id'] + id;
+	// Apple iTunes Store link parts.
+	var linkBits = {
+		'domain': 'https://itunes.apple.com',
+		'app-path': '/app'
+	}
+
+	return linkBits['domain'] + lang + linkBits['app-path'] + developer + id;
 };
