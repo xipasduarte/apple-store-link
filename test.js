@@ -1,9 +1,10 @@
 'use strict';
-var assert = require('assert');
+var assert         = require('assert');
 var appleStoreLink = require('./');
-var id = '376183339';
-var lang = 'pt';
-var developer = 'ted';
+var id             = '376183339';
+var lang           = 'pt';
+var developer      = 'ted';
+var protocol       = 'itms-apps';
 
 // Test link construction (no null parameters).
 it('should ', function () {
@@ -15,6 +16,9 @@ it('should ', function () {
 	);
 	assert.strictEqual(
 		appleStoreLink(id, lang, developer), 'https://itunes.apple.com/' + lang + '/app/' + developer + '/id' + id
+	);
+	assert.strictEqual(
+		appleStoreLink(id, lang, developer, protocol), protocol + '://itunes.apple.com/' + lang + '/app/' + developer + '/id' + id
 	);
 });
 
@@ -28,5 +32,8 @@ it('should ', function () {
 	);
 	assert.strictEqual(
 		appleStoreLink(id, null, developer), 'https://itunes.apple.com/app/' + developer + '/id' + id
+	);
+	assert.strictEqual(
+		appleStoreLink(id, null, null, protocol), protocol + '://itunes.apple.com/app/id' + id
 	);
 });

@@ -25,6 +25,9 @@ appleStoreLink('376183339', 'us', 'ted');
 
 appleStoreLink('376183339', null, 'ted');
 //=> https://itunes.apple.com/app/ted/id376183339
+
+appleStoreLink('376183339', null, 'ted', 'itms-apps');
+//=> itms-app://itunes.apple.com/app/ted/id376183339
 ```
 
 
@@ -33,7 +36,7 @@ appleStoreLink('376183339', null, 'ted');
 
 `https://itunes.apple.com/[lang]/app/[developer]/id[id]`
 
-### appleStoreLink(id, lang)
+### appleStoreLink(id, lang, developer, protocol)
 
 #### id
 
@@ -56,6 +59,17 @@ Localized Apple iTunes page (ex: us, es, pt).
 Type: `string`
 
 The developer's id.
+
+#### protocol
+*Optional*
+
+Type: `string`
+
+The protocol to use for the link:
+* `https`: Default, goes to the application's page on the browser.
+* `itms`: Calls for the App Store to be launched.
+
+**Note:** this variable is only checked to see if it's a string, the protocol is open for any content you'd like on the string (as all other parameters).
 
 ## License
 

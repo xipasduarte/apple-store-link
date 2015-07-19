@@ -2,7 +2,7 @@
 var empty = require('is-empty');
 var trim = require('trim');
 
-module.exports = function (id, lang, developer) {
+module.exports = function (id, lang, developer, protocol) {
 
 	// Check if id is string and not empty.
 	if (typeof id !== 'string') {
@@ -31,11 +31,19 @@ module.exports = function (id, lang, developer) {
 		developer = '/' + trim(developer);
 	}
 
+	// Check if protocol is string and not empty.
+	if (typeof protocol !== 'string') {
+		protocol = 'https';
+	}
+	if ( ! empty(protocol) ) {
+		protocol = trim(protocol);
+	}
+
 	// Apple iTunes Store link parts.
 	var linkBits = {
-		'domain': 'https://itunes.apple.com',
+		'domain': '://itunes.apple.com',
 		'app-path': '/app'
 	}
 
-	return linkBits['domain'] + lang + linkBits['app-path'] + developer + id;
+	return protocol + linkBits['domain'] + lang + linkBits['app-path'] + developer + id;
 };
