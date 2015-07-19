@@ -32,7 +32,7 @@ module.exports = function (id, lang, developer, protocol) {
 	}
 
 	// Check if protocol is string and not empty.
-	if (typeof protocol !== 'string') {
+	if (typeof protocol !== 'string' && empty(protocol)) {
 		protocol = 'https';
 	}
 	if ( ! empty(protocol) ) {
