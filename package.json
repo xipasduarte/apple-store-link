@@ -1,0 +1,31 @@
+{
+  "name": "apple-store-link",
+  "version": "0.0.0",
+  "description": "My impeccable module",
+  "license": "MIT",
+  "repository": "xipasduarte/apple-store-link",
+  "author": {
+    "name": "Pedro Duarte",
+    "email": "pedro.duarte@tecnico.ulisboa.pt",
+    "url": "github.com/xipasduarte"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "scripts": {
+    "test": "test npm"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    ""
+  ],
+  "dependencies": {
+    "is-empty": "^0.0.1",
+    "trim": "^0.0.1"
+  },
+  "devDependencies": {
+    "mocha": "*"
+  }
+}
