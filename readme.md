@@ -40,8 +40,6 @@ The string that identifies the application on each store.
 
 Type: `string`
 
-Default: `'us'`
-
 ## License
 
 MIT © [Pedro Duarte](https://github.com/xipasduarte)
