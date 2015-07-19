@@ -1,12 +1,12 @@
 {
   "name": "apple-store-link",
   "version": "0.0.1",
-  "description": "My impeccable module",
+  "description": "Custruct links to the Apple iTunes Store.",
   "license": "MIT",
   "repository": "xipasduarte/apple-store-link",
   "author": {
     "name": "Pedro Duarte",
-    "email": "pedro.duarte@tecnico.ulisboa.pt",
+    "email": "xipasduarte@gmail.com",
     "url": "github.com/xipasduarte"
   },
   "engines": {
